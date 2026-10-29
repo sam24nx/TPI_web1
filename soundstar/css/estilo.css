@@ -43,3 +43,37 @@ footer {
     padding: 20px;
     background-color: #16213e;
 }
+
+.carrusel {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contenedor-carrusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#boton-anterior, #boton-siguiente {
+    font-size: 2rem;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.imagen-actual img {
+    max-width: 80%;
+    height: auto;
+    border: 3px solid #e94560;
+    border-radius: 10px;
+}
+
+#descripcion-carrusel {
+    font-style: italic;
+    margin-top: 10px;
+}
