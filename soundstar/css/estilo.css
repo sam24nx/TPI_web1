@@ -77,3 +77,45 @@ footer {
     font-style: italic;
     margin-top: 10px;
 }
+
+.grilla-albumes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta-album {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    border: 1px solid #e94560;
+}
+
+.tarjeta-album img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.tarjeta-album h3 {
+    color: #e94560;
+    margin: 10px 0 5px;
+}
+
+.tarjeta-album .artista {
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.boton-canciones {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
