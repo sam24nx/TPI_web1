@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+
     <header>
         <h1>SoundStar</h1>
         <nav>
@@ -19,28 +20,54 @@
     </header>
 
     <main>
-        <section class="carrusel">
-    <h2>Destacados</h2>
-    <div class="contenedor-carrusel">
-        <button id="boton-anterior" aria-label="Imagen anterior">&#10094;</button>
+       <main>
+    <section class="carrusel">
+        <h2>Destacados</h2>
+        <div class="contenedor-carrusel">
+            <button id="boton-anterior" aria-label="Imagen anterior">&#10094;</button>
+            <div class="imagen-actual">
+                <img id="imagen-carrusel" src="img/concierto.jpg" alt="Conciertos en vivo">
+            </div>
+            <button id="boton-siguiente" aria-label="Imagen siguiente">&#10095;</button>
+        </div>
+        <p id="descripcion-carrusel"></p>
+    </section>
 
-        <div class="imagen-actual">
-            <img id="imagen-carrusel" src="img/concierto.jpg" alt="Conciertos en vivo">
+    <!-- NUEVA SECCIÓN: cómo funciona -->
+    <section class="como-funciona">
+        <h2>¿Cómo funciona SoundStar?</h2>
+        <p>SoundStar es un espacio para descubrir y compartir reseñas de discos. Explorá los álbumes destacados, leé la opinión de otros y calificá cada canción con estrellas.</p>
+
+        <div class="pasos">
+            <div class="paso">
+                <h3>1. Explorá</h3>
+                <p>Navegá por los álbumes en la sección <strong>Reseñas</strong> y mirá las portadas, el año y el género de cada disco.</p>
+            </div>
+            <div class="paso">
+                <h3>2. Leé y calificá</h3>
+                <p>Abrí el detalle de cada álbum y mirá la lista de canciones con su puntuación en estrellas.</p>
+            </div>
+            <div class="paso">
+                <h3>3. Compartí tu opinión</h3>
+                <p>¿Escuchaste un disco que te encantó? Contanos tu reseña y la publicamos en la página.</p>
+            </div>
         </div>
 
-        <button id="boton-siguiente" aria-label="Imagen siguiente">&#10095;</button>
-    </div>
-    <p id="descripcion-carrusel"></p>
-</section>
+        <div class="llamado-accion">
+            <p>¿Querés subir tu propia reseña?</p>
+            <a href="contacto.html" class="boton-contacto">Ir a Contacto</a>
+        </div>
+    </section>
 
-        <section>
-            <h2>Bienvenido a SoundStar</h2>
-            <p>Reseñas de discos, canciones y novedades del mundo de la música.</p>
-        </section>
-    </main>
+    <section>
+        <h2>Bienvenido a SoundStar</h2>
+        <p>Reseñas de discos, canciones y novedades del mundo de la música.</p>
+    </section>
+       </main>
+
 
     <footer>
-        <p>SoundStar © 2026</p>
+        <p>&copy; 2026 SoundStar. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/carrusel.js"></script>

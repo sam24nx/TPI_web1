@@ -5,7 +5,7 @@ const albumes = [
         artista: "Los Ramones",
         anio: 1976,
         genero: "Punk Rock",
-        imagen: "img/vinilos.jpg",
+        imagen: "img/ramones.jpg",
         reseña: "El primer disco de los Ramones, considerado uno de los álbumes más influyentes del punk rock.",
         canciones: [
             { titulo: "Blitzkrieg Bop", duracion: "2:12", calificacion: 0 },
@@ -20,7 +20,7 @@ const albumes = [
         artista: "Dreamcatcher",
         anio: 2022,
         genero: "Punk Rock",
-        imagen: "img/guitar.jpg",
+        imagen: "img/dreamcatcher.jpg",
         reseña: "Su primer álbum de estudio de larga duración en coreano, aclamado mundialmente por consolidar su sonido.",
         canciones: [
             { titulo: "Intro: Save Us", duracion: "1:15", calificacion: 0 },
@@ -35,7 +35,7 @@ const albumes = [
         artista: "Michael Jackson",
         anio: 1982,
         genero: "Pop",
-        imagen: "img/concierto.jpg",
+        imagen: "img/Thriller.jpg",
         reseña: "El disco más vendido de todos los tiempos, con hits como Billie Jean y Beat It.",
         canciones: [
             { titulo: "Wanna Be Startin' Somethin'", duracion: "6:02", calificacion: 0 },
@@ -50,7 +50,7 @@ const albumes = [
         artista: "Nirvana",
         anio: 1991,
         genero: "Grunge",
-        imagen: "img/vinilos.jpg",
+        imagen: "img/nevermind.jpg",
         reseña: "El disco que llevó al grunge a la masividad, con Smells Like Teen Spirit a la cabeza.",
         canciones: [
             { titulo: "Smells Like Teen Spirit", duracion: "5:01", calificacion: 0 },
@@ -60,3 +60,24 @@ const albumes = [
         ]
     }
 ];
+
+function mostrarAlbumes() {
+    const grilla = document.getElementById("grilla-albumes");
+    grilla.innerHTML = "";
+
+    albumes.forEach(album => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "tarjeta-album";
+        tarjeta.innerHTML = `
+            <img src="${album.imagen}" alt="Portada del álbum ${album.nombre}">
+            <h3>${album.nombre}</h3>
+            <p class="artista">${album.artista} · ${album.anio} · ${album.genero}</p>
+            <p class="reseña">${album.reseña}</p>
+            <button class="btn-detalle" data-id="${album.id}">Ver detalle</button>
+        `;
+
+        grilla.appendChild(tarjeta);
+    });
+}
+
+mostrarAlbumes();

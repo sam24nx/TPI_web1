@@ -1,3 +1,4 @@
+/* ===== GENERAL ===== */
 * {
     margin: 0;
     padding: 0;
@@ -5,117 +6,321 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a2e;
-    color: #eaeaea;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #121212;
+    color: #e5e5e5;
+    line-height: 1.6;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #16213e;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-nav a {
-    color: #eaeaea;
+a {
+    color: #e5e5e5;
     text-decoration: none;
 }
 
-nav a.activo {
-    color: #e94560;
+/* ===== HEADER ===== */
+header {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #b3b3b3;
     font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
 }
 
+nav a:hover {
+    color: #fff;
+    background: #333;
+}
+
+nav a.activo {
+    color: #fff;
+    background: #333;
+    border-radius: 4px;
+}
+
+/* ===== MAIN ===== */
 main {
-    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #16213e;
+main h2 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
+/* ===== CARRUSEL ===== */
 .carrusel {
-    text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
 }
 
 .contenedor-carrusel {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 1rem;
+    justify-content: center;
 }
 
-#boton-anterior, #boton-siguiente {
-    font-size: 2rem;
-    background-color: #e94560;
-    color: white;
+.contenedor-carrusel button {
+    background: #333;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.contenedor-carrusel button:hover {
+    background: #e50914;
 }
 
 .imagen-actual img {
-    max-width: 80%;
-    height: auto;
-    border: 3px solid #e94560;
-    border-radius: 10px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 #descripcion-carrusel {
-    font-style: italic;
-    margin-top: 10px;
+    text-align: center;
+    color: #b3b3b3;
+    margin-top: 1rem;
 }
 
-.grilla-albumes {
+/* ===== CÓMO FUNCIONA ===== */
+.como-funciona {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pasos {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5rem;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.paso {
+    flex: 1;
+    min-width: 200px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.paso:hover {
+    border-color: #e50914;
+}
+
+.paso h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.llamado-accion {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.boton-contacto {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: #e50914;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.boton-contacto:hover {
+    background: #b0060e;
+}
+
+/* ===== GRILLA DE ÁLBUMES ===== */
+.grilla-albumes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .tarjeta-album {
-    background-color: #16213e;
-    border-radius: 10px;
-    padding: 15px;
-    width: 300px;
-    border: 1px solid #e94560;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta-album:hover {
+    transform: translateY(-4px);
+    border-color: #555;
 }
 
 .tarjeta-album img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .tarjeta-album h3 {
-    color: #e94560;
-    margin: 10px 0 5px;
+    color: #fff;
+    padding: 0.8rem 1rem 0.2rem;
 }
 
 .tarjeta-album .artista {
-    font-style: italic;
-    color: #aaa;
-    margin-bottom: 10px;
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    padding: 0 1rem;
 }
 
-.boton-canciones {
-    background-color: #e94560;
-    color: white;
+.tarjeta-album p {
+    padding: 0 1rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.btn-detalle {
+    margin: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: #333;
+    color: #fff;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-detalle:hover {
+    background: #e50914;
+}
+
+/* ===== PANEL DE DETALLE ===== */
+.detalle-album {
+    display: none;
+    margin-top: 2rem;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+}
+
+#cerrar-detalle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#cerrar-detalle:hover {
+    background: #e50914;
+}
+
+.lista-canciones {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.cancion-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.titulo-cancion {
+    color: #e5e5e5;
+}
+
+.estrellas {
+    color: #f5c518; /* dorado estilo IMDb para las estrellas */
+}
+
+/* ===== CONTACTO ===== */
+.formulario-contacto {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.formulario-contacto div {
+    margin-bottom: 1rem;
+}
+
+.formulario-contacto label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #b3b3b3;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 0.7rem;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+.error {
+    color: #e50914;
+    font-size: 0.85rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1a1a1a;
+    color: #666;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #333;
+    margin-top: 3rem;
 }

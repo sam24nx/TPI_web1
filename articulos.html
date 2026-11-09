@@ -3,68 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundWave | Inicio</title>
+    <title>SoundWave | Reseñas</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+
     <header>
-        <h1>SoundWave</h1>
+        <h1>SoundStar</h1>
         <nav>
             <ul>
-                <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="articulos.html">Reseñas</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="articulos.html" class="activo">Reseñas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <li><a href="index.html">Inicio</a></li>
-<li><a href="articulos.html" class="activo">Reseñas</a></li>
-<li><a href="contacto.html">Contacto</a></li>
+        <h2>Reseñas de discos</h2>
 
-<main>
-    <h2>Reseñas de discos</h2>
+        <div id="grilla-albumes" class="grilla-albumes"></div>
 
-    <section class="grilla-albumes">
-        <article class="tarjeta-album">
-            <img src="img/vinilos.jpg" alt="Portada del album Ramones">
-            <h3>Ramones</h3>
-            <p class="artista">Los Ramones · 1976 · Punk Rock</p>
-            <p>El primer disco de los Ramones, considerado uno de los álbumes más influyentes del punk rock.</p>
-            <button class="boton-canciones">Ver canciones</button>
-        </article>
-
-        <article class="tarjeta-album">
-            <img src="img/guitar.jpg" alt="Portada del album Apocalypse : Save us">
-            <h3>Apocalypse : Save us</h3>
-            <p class="artista">Dreamcatcher · 2022 · Punk Rock</p>
-            <p>Fue su primer álbum de estudio de larga duración en coreano aclamado mundialmente por consolidar de forma brillante su distintiva fusión entre el pop coreano y el punk rock.</p>
-            <button class="boton-canciones">Ver canciones</button>
-        </article>
-
-        <article class="tarjeta-album">
-            <img src="img/concierto.jpg" alt="Portada del album Thriller">
-            <h3>Thriller</h3>
-            <p class="artista">Michael Jackson · 1982 · Pop</p>
-            <p>El disco mas vendido de todos los tiempos, con hits como Billie Jean y Beat It.</p>
-            <button class="boton-canciones">Ver canciones</button>
-        </article>
-
-        <article class="tarjeta-album">
-            <img src="img/vinilos.jpg" alt="Portada del album Nevermind">
-            <h3>Nevermind</h3>
-            <p class="artista">Nirvana · 1991 · Grunge</p>
-            <p>El disco que llevo al grunge a la masividad, con Smells Like Teen Spirit a la cabeza.</p>
-            <button class="boton-canciones">Ver canciones</button>
-        </article>
-    </section>
-</main>
-
+        <div id="detalle-album" class="detalle-album">
+            <button id="cerrar-detalle" aria-label="Cerrar detalle">&#10006;</button>
+            <div id="contenido-detalle"></div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 SoundWave. Todos los derechos reservados.</p>
+        <p>&copy; 2026 SoundStar. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/articulos.js"></script>
+    <script src="js/albumes.js"></script>
+    <script src="js/resenas.js"></script>
+</body>
+</html>

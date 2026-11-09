@@ -3,60 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundWave | Inicio</title>
+    <title>SoundStar | Contacto</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+
     <header>
-        <h1>SoundWave</h1>
+        <h1>SoundStar</h1>
         <nav>
             <ul>
-                <li><a href="index.html" class="activo">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="articulos.html">Reseñas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <li><a href="index.html">Inicio</a></li>
-<li><a href="articulos.html">Reseñas</a></li>
-<li><a href="contacto.html" class="activo">Contacto</a></li>
+        <section class="formulario-contacto">
+            <form id="formulario-contacto" novalidate>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <span class="error" id="error-nombre"></span>
+                </div>
 
-<form id="formulario-contacto" novalidate>
-    <div>
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre">
-        <span class="error" id="error-nombre"></span>
-    </div>
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error" id="error-email"></span>
+                </div>
 
-    <div>
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email">
-        <span class="error" id="error-email"></span>
-    </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                    <span class="error" id="error-telefono"></span>
+                </div>
 
-    <div>
-        <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono">
-        <span class="error" id="error-telefono"></span>
-    </div>
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje"></textarea>
+                    <span class="error" id="error-mensaje"></span>
+                </div>
 
-    <div>
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje"></textarea>
-        <span class="error" id="error-mensaje"></span>
-    </div>
-
-    <button type="submit">Enviar</button>
-</form>
-
-<div id="resumen-envio"></div>
-
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 SoundWave. Todos los derechos reservados.</p>
+        <p>&copy; 2026 SoundStar. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/validacion.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
