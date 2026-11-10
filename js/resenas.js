@@ -9,7 +9,20 @@ const cancionesPorAlbum = {
         { titulo: "Intro: Save us", estrellas: 4 },
         { titulo: "BEcause", estrellas: 5 },
         { titulo: "Vision", estrellas: 4 },
-        { titulo: "Fairytale", estrellas: 4 }
+        { titulo: "Fairytale", estrellas: 4 },
+        { titulo: "Locked Inside a Door", estrellas: 5 },
+        { titulo: "MAISON", estrellas: 4 },
+        { titulo: "Starlight", estrellas: 5 },
+        { titulo: "Together", estrellas: 4 },
+        { titulo: "For You", estrellas: 5 },
+        { titulo: "Skit: The seven doors", estrellas: 3 },
+        { titulo: "Cherry (Real miracle)", estrellas: 4 },
+        { titulo: "No dot", estrellas: 5 },
+        { titulo: "Ecstasy", estrellas: 4 },
+        { titulo: "Midwinter", estrellas: 4 },
+        { titulo: "For", estrellas: 5 },
+        { titulo: "Beauty Full", estrellas: 4 },
+        { titulo: "Playground", estrellas: 5 }
     ],
     "Thriller": [
         { titulo: "Wanna Be Startin' Somethin'", estrellas: 4 },
@@ -22,10 +35,11 @@ const cancionesPorAlbum = {
         { titulo: "Come as You Are", estrellas: 5 },
         { titulo: "Lithium", estrellas: 4 },
         { titulo: "In Bloom", estrellas: 4 }
-    ]
+    ],
 };
 
 function dibujarEstrellas(cantidad) {
+
     let estrellas = "";
     for (let i = 1; i <= 5; i++) {
         estrellas += i <= cantidad ? "★" : "☆";
@@ -37,30 +51,74 @@ function mostrarDetalle(album) {
     const detalle = document.getElementById("detalle-album");
     const contenido = document.getElementById("contenido-detalle");
 
-    // Buscar las canciones de este álbum
-    const canciones = cancionesPorAlbum[album.nombre] || [];
+    // Las canciones salen del propio álbum (albumes.js)
+    const canciones = album.canciones || [];
 
-    // Armar la lista con estrellas
+    // Calcular el puntaje numérico (promedio de calificaciones, con 1 decimal)
+    let totalCalificaciones = 0;
+    canciones.forEach(c => totalCalificaciones += c.calificacion);
+    const puntaje = canciones.length > 0
+        ? (totalCalificaciones / canciones.length).toFixed(1)
+        : "0.0";
+
+    // Lista de canciones con estrellas y nota
     let lista = "";
     canciones.forEach(cancion => {
         lista += `
             <li class="cancion-item">
                 <span class="titulo-cancion">${cancion.titulo}</span>
-                <span class="estrellas">${dibujarEstrellas(cancion.estrellas)}</span>
+                <span class="estrellas">${dibujarEstrellas(cancion.calificacion)}</span>
+                <span class="nota">${cancion.calificacion}/5</span>
             </li>
         `;
     });
 
     contenido.innerHTML = `
-        <h3>${album.nombre}</h3>
-        <p class="artista">${album.artista} · ${album.anio} · ${album.genero}</p>
-        <ul class="lista-canciones">${lista}</ul>
+        <div class="detalle-grid">
+            <div class="detalle-portada">
+                <img src="${album.imagen}" alt="Portada del álbum ${album.nombre}">
+            </div>
+            <div class="detalle-info">
+                <h3>${album.nombre}</h3>
+                <p class="artista">${album.artista} · ${album.anio} · ${album.genero}</p>
+                <p class="puntaje">Puntaje: <strong>${puntaje}/5</strong> ★</p>
+                <p class="reseña">${album.reseña}</p>
+
+                <h4>Canciones</h4>
+                <ul class="lista-canciones">${lista}</ul>
+
+                <div class="botones-enlaces">
+                    ${album.spotify ? `<a href="${album.spotify}" target="_blank" class="enlace-spotify">▶ Escuchar en Spotify</a>` : ""}
+                    ${album.youtube ? `<a href="${album.youtube}" target="_blank" class="enlace-youtube">▶ Ver en YouTube</a>` : ""}
+                </div>
+            </div>
+        </div>
     `;
 
     detalle.style.display = "block";
 }
 
 // Ocultar el detalle
+function cerrarDetalle() {
+    document.getElementById("detalle-album").style.display = "none";
+}
+
+// Escuchar clics en "Ver detalle" y en la ✖ (delegación de eventos)
+document.addEventListener("click", function(evento) {
+    const boton = evento.target.closest(".btn-detalle");
+    if (boton) {
+        const id = Number(boton.dataset.id);
+        const album = albumes.find(a => a.id === id);
+        if (album) {
+            mostrarDetalle(album);
+        }
+    }
+
+    if (evento.target.id === "cerrar-detalle") {
+        cerrarDetalle();
+    }
+});
+
 function cerrarDetalle() {
     document.getElementById("detalle-album").style.display = "none";
 }

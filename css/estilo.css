@@ -170,7 +170,7 @@ main h2 {
     background: #b0060e;
 }
 
-/* ===== GRILLA DE ÁLBUMES ===== */
+/* ===== ÁLBUMES ===== */
 .grilla-albumes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -275,7 +275,7 @@ main h2 {
 }
 
 .estrellas {
-    color: #f5c518; /* dorado estilo IMDb para las estrellas */
+    color: #f5c518; 
 }
 
 /* ===== CONTACTO ===== */
@@ -323,4 +323,124 @@ footer {
     padding: 1.5rem;
     border-top: 1px solid #333;
     margin-top: 3rem;
+}
+
+/* ===== DETALLE EN DOS COLUMNAS ===== */
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.detalle-portada img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.detalle-info h3 {
+    color: #fff;
+    margin: 0 0 0.3rem;
+    font-size: 1.4rem;
+}
+
+.detalle-info .artista {
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+}
+
+.puntaje {
+    color: #f5c518;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.detalle-info .reseña {
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.detalle-info h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.cancion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.cancion-item .nota {
+    color: #999;
+    font-size: 0.85rem;
+    min-width: 35px;
+    text-align: right;
+}
+
+.botones-enlaces {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.enlace-spotify,
+.enlace-youtube {
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.enlace-spotify {
+    background: #1db954; /* verde Spotify */
+    color: #fff;
+}
+
+.enlace-youtube {
+    background: #ff0000; /* rojo YouTube */
+    color: #fff;
+}
+
+.enlace-spotify:hover,
+.enlace-youtube:hover {
+    opacity: 0.8;
+}
+
+/* Responsive: en pantallas chicas, una columna */
+@media (max-width: 700px) {
+    .detalle-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cancion-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.cancion-item .titulo-cancion {
+    flex: 1;              /* ← esto es lo que falta */
+    color: #e5e5e5;
+}
+
+.cancion-item .estrellas {
+    color: #f5c518;
+    white-space: nowrap;  /* evita que las estrellas se partan en dos líneas */
+    text-align: right;
+}
+
+.cancion-item .nota {
+    color: #999;
+    font-size: 0.85rem;
+    min-width: 35px;
+    text-align: right;
 }
